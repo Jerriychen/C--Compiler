@@ -4,8 +4,8 @@
 
 char prog[MAX_LINE],token[10],ch;
 int syn,p,m,n,sum;
-char *keywords[10]={"begin","int","if","else","then","printf","while","do","return","end"};
-
+char *keywords[10]={"begin","int","if","else","for","printf","while","do","return","end"};
+char *BREAK = "break";
 void scaner();
 
 
@@ -13,7 +13,7 @@ int main()
 {
     FILE *pFile1 = fopen("source.txt","r");
     FILE *pFile2 = fopen("output.txt","w");
-    char *str;
+
     while (!feof(pFile1))
     {
         p=0;
@@ -73,6 +73,12 @@ void scaner()
               syn=n+1;
               break;
           }
+        }
+
+
+        //底下这几行是临时加的，为了处理break；
+        if(strcmp(token,BREAK)==0) {
+          syn = 36;
         }
     }
 
