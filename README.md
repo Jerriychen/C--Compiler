@@ -46,4 +46,3 @@ term -> factor * factor
 		| factor / factor
 
 factor -> (boo) | id 
-...
