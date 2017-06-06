@@ -1,5 +1,4 @@
--
-C--Compiler
+文法如下
 --
 
 program -> block
@@ -8,11 +7,11 @@ block -> begin decls stmts end
 
 decls -> decl decls | NULL
 
-decl -> int id;
+decl  -> int id;
 
 stmts -> stmt stmts | NULL
 
-stmt ->  id = boo
+stmt  ->  id = boo
 
 		| if( boo ) { stmt }
 		
@@ -27,13 +26,24 @@ stmt ->  id = boo
 		| return id;
 		
 		| break;
+		
 		| block
-boo -> expr < expr | expr > expr |
- 
- 		expr <= expr | expr >=expr
+		
+boo -> expr < expr 
 
-expr -> term + term | term - term
+		| expr > expr 
+		
+		| expr <= expr 
+		
+		| expr >=expr
 
-term -> factor * factor | factor / factor
+expr -> term + term 
+
+		| term - term
+
+term -> factor * factor 
+		
+		| factor / factor
 
 factor -> (boo) | id 
+...
