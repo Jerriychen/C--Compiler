@@ -1,0 +1,16 @@
+begin
+	int x=4;
+	int y=x*4+5-(8*2);
+	int z;
+	z=x*(y+z);
+	int sum=0;
+
+	while(x<10) {
+	    sum = x*3;
+	    x++;
+	}
+	for(i=0;i<10;i=i+1){
+	    sum=sum+1;
+	}
+	return z;
+end
